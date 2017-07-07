@@ -1,4 +1,4 @@
-package org.svend.playground
+package be.svend.eventhub.producer
 
 import org.apache.avro.Schema
 import org.apache.avro.generic.GenericData
@@ -29,7 +29,5 @@ object UserMessage {
     {"name": "message", "type": ["string", "null"]}
     ]
   }""")
-
-
 
 }

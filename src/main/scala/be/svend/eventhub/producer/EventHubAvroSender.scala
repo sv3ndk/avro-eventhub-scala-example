@@ -1,4 +1,4 @@
-package org.svend.playground
+package be.svend.eventhub.producer
 
 import java.io.ByteArrayOutputStream
 import com.microsoft.azure.eventhubs.{EventData, EventHubClient}
@@ -9,10 +9,15 @@ import scala.collection.JavaConverters._
 
 /**
   * Created by svend on 25/06/2017.
+  *
+  * Quick and dirty EventHub message producer, sending randomly generated avro events
+  *
+  * sbt "runMain be.svend.eventhub.producer.EventHubAvroSender <eventHub connection string>  "
+  *
   */
 object EventHubAvroSender extends App {
 
-  val connectionString = ""
+  val connectionString = args(0)
 
   val ehClient = EventHubClient.createFromConnectionStringSync(connectionString)
 
@@ -63,5 +68,5 @@ object EventHubAvroSender extends App {
   ehClient.close()
 
   println(s"done")
-  
+
 }

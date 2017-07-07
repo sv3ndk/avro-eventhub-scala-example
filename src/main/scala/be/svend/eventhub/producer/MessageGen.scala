@@ -1,4 +1,4 @@
-package org.svend.playground
+package be.svend.eventhub.producer
 
 import scala.util.Random
 
